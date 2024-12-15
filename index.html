@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Arrays in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Objects and Arrays in JavaScript</h1>
+    <p>The results from JavaScript code will be displayed below:</p>
+
+    <div id="output">
+        <h2>Student Details:</h2>
+        <pre id="student-details"></pre>
+
+        <h2>Numbers Array Results:</h2>
+        <pre id="numbers-array"></pre>
+
+        <h2>Fruits Array Results:</h2>
+        <pre id="fruits-array"></pre>
+    </div>
+
+    <script>
+        // Step 1: Creating an object with keys and values
+        let student = {
+            name: "Rayyan",
+            age: 15,
+            grade: "10th",
+            favoriteSubject: "Computer Science"
+        };
+
+        document.getElementById('student-details').textContent = JSON.stringify(student, null, 2); // Pretty-print JSON object
+
+        // Step 2: Creating an array and displaying it
+        let numbers = [10, 20, 30, 40, 50];
+        document.getElementById('numbers-array').textContent = `Original Numbers Array: [${numbers.join(", ")}]\n`;
+
+        // Step 3: Using pop() to remove the last element
+        numbers.pop();
+        document.getElementById('numbers-array').textContent += `After pop(): [${numbers.join(", ")}]\n`;
+
+        // Step 4: Using join() to display the array as a string
+        let joinedNumbers = numbers.join(" - ");
+        document.getElementById('numbers-array').textContent += `Joined Numbers Array: ${joinedNumbers}`;
+
+        // Step 5: Another array example for practice
+        let fruits = ["Apple", "Banana", "Mango", "Orange"];
+        document.getElementById('fruits-array').textContent = `Original Fruits Array: [${fruits.join(", ")}]\n`;
+
+        fruits.pop();
+        document.getElementById('fruits-array').textContent += `After pop(): [${fruits.join(", ")}]\n`;
+
+        let joinedFruits = fruits.join(", ");
+        document.getElementById('fruits-array').textContent += `Joined Fruits Array: ${joinedFruits}`;
+    </script>
+</body>
+</html>
